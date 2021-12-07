@@ -1,7 +1,21 @@
 <?php
 
+
 require_once("dbConn.php");
 require_once("query-form.php");
+
+$sql = "SELECT * FROM STOCK";
+
+$query = $conn->query($sql);
+
+foreach ($query as $row) {
+    if (!$query) {
+        echo "bad query";
+        return;
+    }
+    echo $row['Ticker'] . '  ';
+}
+
 
 ?>
 
@@ -23,7 +37,7 @@ require_once("query-form.php");
         Stock Database Web Interface
     </header>
 
-    <form action="." method="POST">
+    <form action="./index.php" method="POST">
         <div class="flex-container">
             <div id="query-form">
             <div class="form-item">
