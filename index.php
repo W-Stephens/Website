@@ -4,24 +4,16 @@
 require_once("dbConn.php");
 require_once("query-form.php");
 
-try {
-
-    $sql = "SELECT * FROM STOCK";
-
-    $query = $conn->query($sql);
-
-    foreach ($query as $row) {
-        if (!$query) {
-            echo "bad query";
-            return;
-        }
-        echo $row['Ticker'] . '  ';
-    }
-} catch (Exception $e) {
-    echo "query failed: " . $e->getMessage();
+// Checking for connections
+if ($mysqli->connect_error) {
+    die('Connect Error (' . 
+    $mysqli->connect_errno . ') '. 
+    $mysqli->connect_error);
 }
 
-
+$sql = "SELECT * FROM BOT";
+$result = $mysqli->query($sql);
+$mysqli->close(); 
 ?>
 
 <!doctype HTML>
@@ -32,6 +24,34 @@ try {
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <section>
+        <h1>TEST TEST</h1>
+        <!-- TABLE CONSTRUCTION-->
+        <table>
+            <tr>
+                <th>STOCK</th>
+                <thPrevious Prices</th>
+                <th>Ticker</th>
+                <th>Current Price</th>
+            </tr>
+            <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+            <?php   // LOOP TILL END OF DATA 
+                while($rows=$result->fetch_assoc())
+                {
+             ?>
+            <tr>
+                <!--FETCHING DATA FROM EACH 
+                    ROW OF EVERY COLUMN-->
+                <td><?php echo $rows['Previous_Price_At'];?></td>
+                <td><?php echo $rows['Ticker'];?></td>
+                <td><?php echo $rows['Current_Price'];?></td>
+
+            </tr>
+            <?php
+                }
+             ?>
+        </table>
+    </section>
     <!--nav class="flex-container">
         <a href="./query-page.html"><div>Query Page</div></a>
         <a href="./function-management.html"><div>Function Management</div></a>
