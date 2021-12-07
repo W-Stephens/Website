@@ -38,22 +38,13 @@ function selectStock($conn) {
 }
 
 function deleteBot($conn) {
-    
-    $query = "SELECT * FROM BOT";
-    if ($result = $mysqli->query($query)) {
-        
-            while($row = $result->fetch_assoc()) {
-            $field1name = $row["col1"];
-            $field2name = $row["col2"];
-            $field3name = $row["col3"];
-            $field4name = $row["col4"];
-            $field5name = $row["col5"];
+    $botID = (int)$_POST['input1'];
+    $query = $conn->query("DELETE FROM BOT WHERE Bot_Id = $botID");
+    $row = $query->fetch();
+    if (!$row) {
+        return "Invalid Input";
     }
-
-    /* free result set */
-    $result->free();
-}  
- 
+    return "Bot #$botID is deleted";
 }
 
 function modifyBot($conn) {
