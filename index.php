@@ -24,7 +24,7 @@ $conn = sqlsrv_connect($serverName, $co
 
 $sql = "SELECT * FROM BOT";
 $result = $conn->query($sql);
-$onn->close(); 
+$conn->close(); 
 ?>
 
 <!doctype HTML>
