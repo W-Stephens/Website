@@ -5,15 +5,15 @@ require_once("dbConn.php");
 require_once("query-form.php");
 
 // Checking for connections
-if ($mysqli->connect_error) {
+if (conn->connect_error) {
     die('Connect Error (' . 
-    $mysqli->connect_errno . ') '. 
-    $mysqli->connect_error);
+    $conn->connect_errno . ') '. 
+    $conn->connect_error);
 }
 
 $sql = "SELECT * FROM BOT";
-$result = $mysqli->query($sql);
-$mysqli->close(); 
+$result = conn->query($sql);
+conn->close(); 
 ?>
 
 <!doctype HTML>
