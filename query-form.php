@@ -8,18 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 function insertStock($conn) {
     $ticker = $_POST['input1'];
-    $type = $_POST['stockType'];
     $curr_price = $_POST['input2'];
     $prev_price = $_POST['input3'];
-    $payout = $_POST['input4']; // only for dividends;
     $sql = "INSERT INTO STOCK 
                 VALUES ($prev_price, '$ticker', $curr_price);";
-    if ($type == "dividend") {
-        $sql .= "INSERT INTO DIVIDEND VALUES ('$ticker', $payout)";
-    }
-    if ($type == "index") {
-        $sql .= "INSERT INTO INDEX_CONTAINS_STOCKS VALUES('$ticker')";
-    }
     $query = $conn->query($sql);
     if (!$query) {
             return "Invalid Input";
@@ -40,8 +32,7 @@ function selectStock($conn) {
 function deleteBot($conn) {
     $botID = (int)$_POST['input1'];
     $query = $conn->query("DELETE FROM BOT WHERE Bot_Id = $botID");
-    $row = $query->fetch();
-    if (!$row) {
+    if (!$query) {
         return "Invalid Input";
     }
     return "Bot #$botID is deleted";

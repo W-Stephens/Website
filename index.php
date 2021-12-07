@@ -15,13 +15,6 @@ require_once("query-form.php");
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-
-    <!--nav class="flex-container">
-        <a href="./query-page.html"><div>Query Page</div></a>
-        <a href="./function-management.html"><div>Function Management</div></a>
-        <div>Data Modification</div>
-        <div>Logout</div>
-    </nav-->
     <header class="border">
         Stock Database Web Interface
     </header>
@@ -48,26 +41,11 @@ require_once("query-form.php");
                     <input type="text" id="input2" name="input2">
                 </div>
                 <div class="form-item">
-                    <label class="form-label" for="input3">Input 3:</label>
+                    <label class="form-label" for="input3">Input 3: </label>
                     <input type="text" id="input3" name="input3">
                 </div>
                 <div class="form-item">
-                    <label class="form-label" for="input4">Input 4:</label>
-                    <input type="text" id="input4" name="input4">
-                </div>
-                <div class="form-item">
-                    <select name="stockType">
-                        <option value="stock">Regular Stock</option>
-                        <option value="dividend">Dividend</option>
-                        <option value="index">Index</option>
-                    </select>
-                </div>
-                <div class="form-item">
                     <input id="submit-Btn" type="submit" value="submit">
-                </div>
-                <div class="form-item">
-                    <p id="function-label">To insert stock, enter ticker in input 1, current price in input 2, 
-                        prev price in input 2, and payout in input 3 if dividend stock. use the dropdown to select stock type.</p>
                 </div>
             </div>
             <div id="output-area">
