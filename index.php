@@ -4,7 +4,21 @@
 require_once("dbConn.php");
 require_once("query-form.php");
 
+try {
 
+    $sql = "SELECT * FROM STOCK";
+
+    $query = $conn->query($sql);
+
+    foreach ($query as $row) {
+        if (!$query) {
+            echo "bad query";
+            return;
+        }
+        echo $row['Ticker'] . '  ';
+    }
+} catch (Exception $e) {
+    echo "query failed: " . $e->getMessage();
 }
 
 
