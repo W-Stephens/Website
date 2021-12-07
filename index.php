@@ -5,7 +5,6 @@
 require_once("query-form.php");
 
 
-<?php
 // PHP Data Objects(PDO) Sample Code:
 try {
     $conn = new PDO("sqlsrv:server = tcp:wstephensprojects.database.windows.net,1433; Database = ProjectGroup28", "WStephens", "{Group28admin}");
@@ -25,6 +24,7 @@ $conn = sqlsrv_connect($serverName, $co
 $sql = "SELECT * FROM BOT";
 $result = $conn->query($sql);
 $conn->close(); 
+
 ?>
 
 <!doctype HTML>
