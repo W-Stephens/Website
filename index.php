@@ -3,6 +3,19 @@
 require_once("dbConn.php");
 require_once("query-form.php");
 
+$sql = "SELECT * FROM STOCK";
+
+$query = $conn->query($sql);
+
+foreach ($query as $row) {
+    if (!$query) {
+        echo "bad query";
+        return;
+    }
+    echo $row['Ticker'] . '  ';
+}
+
+
 ?>
 
 <!doctype HTML>
