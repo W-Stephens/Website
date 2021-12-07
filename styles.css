@@ -1,0 +1,81 @@
+body {
+    font-size: 1.25rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    font-size: 2rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 1.5rem;
+    height: 8rem;
+    line-height: 8rem;
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    text-align: center;
+    line-height: 5rem;
+}
+
+.border {
+    border: .2rem solid black;
+    border-radius: 1rem;
+}
+
+#login-form {
+    margin: auto;
+    width: 30rem;
+    padding: 10rem;
+}
+
+#query-form {
+    margin: 10rem auto 10rem auto;
+    width: 40rem;
+}
+
+.form-label {
+    width: 7.5rem;
+    display: inline-block;
+    
+    text-align: right;
+}
+
+.form-item {
+    margin: 2rem;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+}
+
+nav > a, nav > div {
+    width: 100%;
+    height: 5rem;
+    border: .1rem solid black;
+    border-radius: .25rem;
+    display: block;
+}
+
+#output-area {
+    margin: 5rem auto 5rem auto;
+    flex-grow: .25;
+}
+
+#query-output {
+    width: 95%;
+    margin: auto;
+}
+
+#query-output > textarea {
+    width: 100%;
+}
+
+#submit-Btn {
+    padding: .5rem .8rem .5rem .8rem;
+    font-size: 1rem;
+}
