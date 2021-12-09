@@ -50,6 +50,7 @@ require_once("query-form.php");
             </div>
             <div id="output-area">
                 <textarea rows="40" cols="70" readonly><?php echo $outputText ?>
+            <?php
             $sql = "SELECT * FROM STOCK";
             $stmt = sqlsrv_query($conn, $sql);
             if ($stmt === false) {
